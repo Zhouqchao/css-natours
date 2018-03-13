@@ -27,7 +27,7 @@
 		// background-color: orangered;
 		float: left;
 		&:not(:last-child) {
-			margin-right: $gutter-vertical-small;
+			margin-right: $gutter-horizontal;
 
 			@include respond(tab-port) {
 				margin-right: 0;

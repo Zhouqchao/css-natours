@@ -906,7 +906,7 @@ body {
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 2rem; }
+      margin-right: 6rem; }
       @media only screen and (max-width: 56.25em) {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 0;

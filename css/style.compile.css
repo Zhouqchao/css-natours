@@ -98,7 +98,7 @@ body {
   margin-bottom: 6rem; }
   @media only screen and (max-width: 37.5em) {
     .heading-primary {
-      margin-bottom: 2rem; } }
+      margin-bottom: 4rem; } }
   .heading-primary--main {
     display: block;
     font-size: 6rem;
@@ -689,13 +689,39 @@ body {
     transform: translate(-50%, -50%) scale(0.25);
     transition: all .4s .2s; }
   .popup__left {
-    width: 33.333333333%;
+    width: calc(100% / 3);
     display: table-cell; }
   .popup__right {
-    width: 66.666666667%;
+    width: 66.66667%;
     display: table-cell;
     vertical-align: middle;
+    box-sizing: border-box;
     padding: 3rem 5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .popup:target .popup__content {
+      display: block; }
+    .popup:target .popup__left {
+      display: block;
+      float: left;
+      margin-right: 2rem; }
+    .popup:target .popup__right {
+      display: block;
+      width: 100%; }
+      .popup:target .popup__right > * {
+        display: inline; }
+      .popup:target .popup__right .btn {
+        display: inline-block;
+        margin-top: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .popup:target .popup__right {
+      padding: 1rem; }
+      .popup:target .popup__right .btn {
+        margin-top: 1rem; }
+      .popup:target .popup__right .popup__close {
+        top: 1rem;
+        right: 1rem; }
+      .popup:target .popup__right .heading-secondary {
+        padding: 0; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -712,6 +738,9 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__text {
+        column-count: 1; } }
 
 .navigation__checkbox {
   display: none; }
@@ -813,7 +842,10 @@ body {
 
 .navigation__icon {
   position: relative;
-  margin: calc((5rem - 2px) / 2) 0; }
+  margin: calc((7rem - 2px) / 2) 0; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__icon {
+      margin: calc((5rem - 2px) / 2) 0; } }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     display: inline-block;
     width: 3rem;

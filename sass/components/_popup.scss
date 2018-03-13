@@ -25,7 +25,7 @@
 	&:target &__content {
 		opacity: 1;
 		visibility: visible;
-		transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);		
 	}
 
 	&__close {
@@ -62,17 +62,56 @@
 	}
 
 	&__left{
-		width: 33.333333333%;
-		// float: left;
+		width: calc(100% / 3);
 		display: table-cell; 
+
 	}
 
 	&__right {
-		width: 66.666666667%;
+		width: (100% / 3 * 2);
 		// float: left;
 		display: table-cell;
 		vertical-align: middle; // align to the middle of the img
+		box-sizing: border-box;
 		padding: 3rem 5rem;
+	}
+
+	@include respond(tab-port) {
+		&:target &__content {
+			display: block;
+		}
+		&:target &__left {
+			display: block;
+			float: left;
+			margin-right: 2rem;
+		}
+
+		&:target &__right {
+			display: block;
+			width: 100%;
+			& > * {
+				display: inline;
+			}
+			.btn {
+				display: inline-block;
+				margin-top: 2rem;
+			}
+		}
+	}
+	@include respond(phone) {
+		&:target &__right {
+			padding: 1rem;
+			.btn {
+				margin-top: 1rem;
+			}
+			.popup__close {
+				top: 1rem;
+				right: 1rem;
+			}
+			.heading-secondary {
+				padding: 0;
+			}
+		}
 	}
 
 	&__img {
@@ -96,6 +135,10 @@
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
 		hyphens: auto; // add hyphens when line breaks
+
+		@include respond(tab-port) {
+			column-count: 1;
+		}
 	}
 }
 

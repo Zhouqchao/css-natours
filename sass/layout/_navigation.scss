@@ -130,7 +130,11 @@
 	//Icon
 	&__icon {
 		position: relative;
-		margin: calc((5rem - 2px) / 2) 0; //center vertically
+		margin: calc((7rem - 2px) / 2) 0; //center vertically
+
+		@include respond(phone) {
+			margin: calc((5rem - 2px) / 2) 0; 
+		}
 
 		&,
 		&::before,

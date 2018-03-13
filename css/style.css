@@ -813,7 +813,10 @@ body {
 
 .navigation__icon {
   position: relative;
-  margin: calc((5rem - 2px) / 2) 0; }
+  margin: calc((7rem - 2px) / 2) 0; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__icon {
+      margin: calc((5rem - 2px) / 2) 0; } }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     display: inline-block;
     width: 3rem;

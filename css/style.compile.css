@@ -793,14 +793,16 @@ body {
       right: 1rem; } }
 
 .navigation__nav {
-  height: 100vh;
+  width: 0;
+  height: 0;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
   opacity: 0;
-  width: 0;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .navigation__nav * {
+    height: 0; }
 
 .navigation__list {
   position: absolute;
@@ -814,11 +816,11 @@ body {
 .navigation__item {
   margin: 1rem; }
 
-.navigation__link:link, .navigation__link:visited {
+.navigation__link, .navigation__link:link, .navigation__link:visited {
   display: inline-block;
   font-size: 3rem;
   font-weight: 300;
-  padding: 1rem 2rem;
+  height: 0;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -833,15 +835,24 @@ body {
 
 .navigation__link span {
   display: inline-block;
-  margin-right: 1rem; }
+  margin-right: 1rem;
+  height: 0; }
 
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
+  height: 100vh;
   opacity: 1;
   width: 100%;
   z-index: 1500; }
+  .navigation__checkbox:checked ~ .navigation__nav > * {
+    height: auto; }
+  .navigation__checkbox:checked ~ .navigation__nav .navigation__link, .navigation__checkbox:checked ~ .navigation__nav .navigation__link:link, .navigation__checkbox:checked ~ .navigation__nav .navigation__link:visited {
+    height: auto;
+    padding: 1rem 2rem; }
+  .navigation__checkbox:checked ~ .navigation__nav .navigation__link span {
+    height: auto; }
 
 .navigation__icon {
   position: relative;
